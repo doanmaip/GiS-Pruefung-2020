@@ -1,0 +1,336 @@
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-size: 15px;
+            font-family: "Poppins", sans-serif;
+            letter-spacing: 0.5px;
+            color: #696969;
+        }
+        
+        h1 {
+            font-size: 30px;
+            font-style: bold;
+        }
+        
+        h2 {
+            font-size: 20px;
+            font-style: bold;
+        }
+        
+        a {
+            color: #696969;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: #A0E583;
+            transition-delay: 0.1s;
+        }
+        
+        .preheadline {
+            color: #033f55;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 35px;
+            border-radius: 5px;
+            background-color: #033f55;
+            color: white;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .btn:hover {
+            opacity: 0.8;
+            cursor: pointer;
+            color: white;
+        }
+        /* USP Banner */
+        
+        .usp-banner {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            background-color: #033f55;
+            align-items: center;
+            top: 0;
+        }
+        
+        .usp-grid {
+            display: flex;
+            padding: 15px;
+            color: white;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 500;
+            margin: auto;
+        }
+        
+        img[alt="icon-usp"] {
+            height: 18px;
+            margin-right: 10px;
+        }
+        /* HEADER */
+        
+        header {
+            height: 150px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            align-items: center;
+            background: white;
+            overflow: hidden;
+        }
+        
+        img[alt="AStA_logo_transp"] {
+            float: left;
+            margin-left: 150px;
+            height: 130px;
+            transition: 0.4s ease-in-out 0.1s
+        }
+        
+        img[alt="AStA_logo_transp"]:hover {
+            height: 140px;
+        }
+        
+        nav a {
+            text-transform: lowercase;
+            letter-spacing: .1rem;
+            margin-right: 50px;
+            font-weight: bolder;
+        }
+        
+        .nav_icons {
+            margin-right: 50px;
+        }
+        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 210px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            padding: 15px;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .summe {
+            vertical-align: middle;
+        }
+        
+        #sticky {
+            overflow: hidden;
+            position: sticky;
+            top: 0;
+        }
+        
+        hr {
+            border-top: 0.5px lightgray solid;
+        }
+        
+        .header-2 {
+            background-color: #f7f7f7;
+            margin: -70px auto 0px;
+            text-align: center;
+            padding: 50px;
+        }
+        /* CONTENT */
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: auto auto;
+        }
+        
+        .content-text {
+            text-align: left;
+            margin: 40px;
+            max-width: 550px;
+        }
+        
+        img[alt="hero"] {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        
+        .kategorie-banner {
+            margin-top: 100px;
+            margin-bottom: 50px;
+            min-height: 250px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        
+        .kategorie-banner:nth-child(1) {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/tech.png");
+        }
+        
+        .kategorie-banner:nth-child(3) {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/spiele.png");
+        }
+        
+        .kategorie-banner:nth-child(5) {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/sonstiges.png");
+        }
+        
+        .kategorie-copy {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            text-align: center;
+            color: white;
+        }
+        
+        .kategorie-copy h1 {
+            margin-top: 70px;
+            text-transform: lowercase;
+        }
+        
+        .kategorie-copy p {
+            margin-top: 70px;
+            max-width: 550px;
+            text-align: left;
+        }
+        
+        .kategorie-banner3 .kategorie-copy p {
+            margin-top: 90px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+        
+        .flexProducts {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .flexProducts div {
+            width: 300px;
+            height: 650px;
+            padding: 20px;
+            text-align: left;
+            margin: auto;
+            margin-top: 50px;
+        }
+        
+        .flexProducts div img {
+            width: 300px;
+            height: 360px;
+        }
+        
+        .flexProducts .button {
+            background-color: #033f55;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+            border: none;
+            margin-bottom: 5px
+        }
+        
+        .button:hover {
+            opacity: 0.7;
+        }
+        
+        .ausgeliehen,
+        .reserviert {
+            opacity: 50%;
+            cursor: not-allowed;
+        }
+        
+        .ausgewaehlt {
+            border: rgba(0, 0, 0, 0.5) solid 5px;
+            cursor: not-allowed;
+        }
+        
+        .login {
+            margin: 80px auto;
+            max-width: 800px;
+            background-color: #f7f7f7;
+            border-radius: 5px;
+            padding: 50px;
+        }
+        
+        input[type=text] {
+            width: 100%;
+            padding: 15px;
+            border: 0.5px solid #a5a5a5;
+            border-radius: 3px;
+            box-sizing: border-box;
+            margin-top: 30px;
+            resize: vertical;
+            font-family: Poppins;
+        }
+        
+        input[type=submit] {
+            font-family: Poppins;
+        }
+        /* FOOTER */
+        
+        footer {
+            padding: 50px;
+            background-color: #f7f7f7;
+            font-size: 12px;
+            font-weight: bolder;
+            letter-spacing: 2px;
+            text-align: center;
+            color: #033f55;
+            bottom: 0;
+        }
+        
+        .footer-banner {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            align-items: center;
+            margin-bottom: 40px;
+            border-bottom: lightgray solid 1px;
+            max-width: 800px;
+            margin: auto;
+        }
+        
+        img[alt="footer-banner"] {
+            max-height: 100px;
+            margin-bottom: 20px;
+            max-width: 500px;
+        }
+        
+        img[alt="logo-asta"] {
+            max-height: 150px;
+            mix-blend-mode: darken;
+        }
+        
+        img[alt="logo-hfu"] {
+            max-height: 50px;
+        }
+        
+        footer p {
+            margin-top: 50px;
+        }
+        
+        .credits {
+            margin-top: 50px;
+            margin-bottom: 5px;
+            font-size: 12px;
+            letter-spacing: 0.45px;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: normal;
+            color: #696969;
+        }
