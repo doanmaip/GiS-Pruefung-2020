@@ -3,7 +3,7 @@ import * as Url from "url";
 import * as Mongo from "mongodb";
 
 
-let port: number = Number (process.env.Port);
+let port: number = Number (process.env.PORT);
 let databaseUrl: string = "mongodb+srv://asta:passwort@cluster0.jvb9m.mongodb.net/Asta?retryWrites=true&w=majority";
 let itemsCollection: Mongo.Collection;
 

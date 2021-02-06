@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const Http = require("http");
 const Url = require("url");
 const Mongo = require("mongodb");
-let port = Number(process.env.Port);
+let port = Number(process.env.PORT);
 let databaseUrl = "mongodb+srv://asta:passwort@cluster0.jvb9m.mongodb.net/Asta?retryWrites=true&w=majority";
 let itemsCollection;
 if (!port) {
