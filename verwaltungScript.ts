@@ -6,7 +6,7 @@ async function inizializeVerwaltung (): Promise<void> {
 }
 
 async function getItemsVerwaltung (): Promise<void> {
-    let response: Response = await fetch("http://asta-gis-2021.herokuapp.com/gegenstaende");
+    let response: Response = await fetch("https://asta-gis-2021.herokuapp.com/gegenstaende");
     items = await response.json();
 }
 
@@ -64,15 +64,15 @@ function createVerwaltungItems(): void {
 
 async function statusAusgehliehen(this: HTMLElement): Promise<void> {
     let item: Gegenstand = items.find(gegestand => gegestand.titel === this.parentElement.children[1].innerHTML);
-    let url: string = "http://asta-gis-2021.herokuapp.com/statusAusgeliehen/" + item._id;
+    let url: string = "https://asta-gis-2021.herokuapp.com/statusAusgeliehen/" + item._id;
     await fetch(url);
-    window.location.href = "http://doanmaip.github.io/GiS-Pruefung-2020/verwaltung.html";
+    window.location.href = "https://doanmaip.github.io/GiS-Pruefung-2020/verwaltung.html";
 }
 
 async function statusFrei(this: HTMLElement): Promise<void> {
     let item: Gegenstand = items.find(gegestand => gegestand.titel === this.parentElement.children[1].innerHTML);
-    let url: string = "http://asta-gis-2021.herokuapp.com/statusFrei/" + item._id;
+    let url: string = "https://asta-gis-2021.herokuapp.com/statusFrei/" + item._id;
     await fetch(url);
-    window.location.href = "http://doanmaip.github.io/GiS-Pruefung-2020/verwaltung.html";
+    window.location.href = "https://doanmaip.github.io/GiS-Pruefung-2020/verwaltung.html";
 }
 

@@ -8,7 +8,7 @@ async function inizialize (): Promise<void> {
 }
 
 async function getItems (): Promise<void> {
-    let response: Response = await fetch("http://asta-gis-2021.herokuapp.com/gegenstaende");
+    let response: Response = await fetch("https://asta-gis-2021.herokuapp.com/gegenstaende");
     items = await response.json();
 }
 

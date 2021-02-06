@@ -6,7 +6,7 @@ async function inizialize() {
     createItems();
 }
 async function getItems() {
-    let response = await fetch("http://asta-gis-2021.herokuapp.com/gegenstaende");
+    let response = await fetch("https://asta-gis-2021.herokuapp.com/gegenstaende");
     items = await response.json();
 }
 function createItems() {

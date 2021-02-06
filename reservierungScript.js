@@ -5,7 +5,7 @@ async function reservieren() {
     let nameInput = document.getElementById("name");
     let reservierung = JSON.parse(localStorage.getItem("reservierungen"));
     reservierung.name = nameInput.value.trim();
-    await fetch("http://asta-gis-2021.herokuapp.com/reservierung", {
+    await fetch("https://asta-gis-2021.herokuapp.com/reservierung", {
         method: "POST",
         mode: "no-cors",
         headers: {
@@ -13,6 +13,6 @@ async function reservieren() {
         },
         body: JSON.stringify(reservierung)
     });
-    window.location.href = "http://doanmaip.github.io/GiS-Pruefung-2020/home.html";
+    window.location.href = "https://doanmaip.github.io/GiS-Pruefung-2020/home.html";
 }
 //# sourceMappingURL=reservierungScript.js.map
