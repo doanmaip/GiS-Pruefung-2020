@@ -8,14 +8,12 @@ async function inizialize (): Promise<void> {
 }
 
 async function getItems (): Promise<void> {
-    let response: Response = await fetch("http://127.0.0.1:8100/gegenstaende");
+    let response: Response = await fetch("http://asta-gis-2021.herokuapp.com/gegenstaende");
     items = await response.json();
-    console.log(items);
 }
 
 function createItems (): void {
     for (let i: number = 0; i < items.length; i++) {
-        console.log(i);
         let newDiv: HTMLDivElement = document.createElement("div");
         if (items[i].kategorie === "technik") {
             document.getElementById("technikProducts").append(newDiv);
@@ -87,9 +85,7 @@ function createItems (): void {
         let reservierung: Reservierung = {ids: []};
         if (localStorage.getItem("reservierungen")) {
             reservierung = JSON.parse(localStorage.getItem("reservierungen"));
-            console.log(reservierung);
             reservierung.ids.push(gegestand._id);
-            console.log(reservierung);
         } else {
             reservierung.ids.push(gegestand._id);
         }

@@ -5,9 +5,8 @@ async function inizializeVerwaltung() {
     createVerwaltungItems();
 }
 async function getItemsVerwaltung() {
-    let response = await fetch("http://127.0.0.1:8100/gegenstaende");
+    let response = await fetch("http://asta-gis-2021.herokuapp.com/gegenstaende");
     items = await response.json();
-    console.log(items);
 }
 function createVerwaltungItems() {
     let itemsContainer = document.getElementById("status");
@@ -53,16 +52,14 @@ function createVerwaltungItems() {
 }
 async function statusAusgehliehen() {
     let item = items.find(gegestand => gegestand.titel === this.parentElement.children[1].innerHTML);
-    let url = `http://127.0.0.1:8100/statusAusgeliehen/${item._id}`;
-    console.log(url);
+    let url = "http://asta-gis-2021.herokuapp.com/statusAusgeliehen/" + item._id;
     await fetch(url);
-    window.location.href = "http://127.0.0.1:5500/verwaltung.html";
+    window.location.href = "http://doanmaip.github.io/GiS-Pruefung-2020/verwaltung.html";
 }
 async function statusFrei() {
     let item = items.find(gegestand => gegestand.titel === this.parentElement.children[1].innerHTML);
-    let url = `http://127.0.0.1:8100/statusFrei/${item._id}`;
-    console.log(url);
+    let url = "http://asta-gis-2021.herokuapp.com/statusFrei/" + item._id;
     await fetch(url);
-    window.location.href = "http://127.0.0.1:5500/verwaltung.html";
+    window.location.href = "http://doanmaip.github.io/GiS-Pruefung-2020/verwaltung.html";
 }
 //# sourceMappingURL=verwaltungScript.js.map

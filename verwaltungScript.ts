@@ -6,9 +6,8 @@ async function inizializeVerwaltung (): Promise<void> {
 }
 
 async function getItemsVerwaltung (): Promise<void> {
-    let response: Response = await fetch("http://127.0.0.1:8100/gegenstaende");
+    let response: Response = await fetch("http://asta-gis-2021.herokuapp.com/gegenstaende");
     items = await response.json();
-    console.log(items);
 }
 
 function createVerwaltungItems(): void {
@@ -28,7 +27,7 @@ function createVerwaltungItems(): void {
         status.innerHTML = "Status: " + items[i].status; 
         
         let ausgeliehen: HTMLParagraphElement = document.createElement("p");
-        if(items[i].status === "ausgeliehen"){
+        if (items[i].status === "ausgeliehen") {
             ausgeliehen.innerHTML = "Ausgeliehen von: " + items[i].ausgeliehenAn;
         } else if (items[i].status === "reserviert") {
             ausgeliehen.innerHTML = "Reserviert von: " + items[i].ausgeliehenAn;
@@ -46,7 +45,7 @@ function createVerwaltungItems(): void {
         freibtn.addEventListener("click", statusFrei);
         
         itemDiv.append(preheadline);
-        if(items[i].status === "frei"){
+        if (items[i].status === "frei") {
             ausgeliehenbtn.disabled = true;
             freibtn.disabled = true;
         } else if (items[i].status === "reserviert") {
@@ -65,17 +64,15 @@ function createVerwaltungItems(): void {
 
 async function statusAusgehliehen(this: HTMLElement): Promise<void> {
     let item: Gegenstand = items.find(gegestand => gegestand.titel === this.parentElement.children[1].innerHTML);
-    let url: string = `http://127.0.0.1:8100/statusAusgeliehen/${item._id}`;
-    console.log(url);
+    let url: string = "http://asta-gis-2021.herokuapp.com/statusAusgeliehen/" + item._id;
     await fetch(url);
-    window.location.href = "http://127.0.0.1:5500/verwaltung.html";
+    window.location.href = "http://doanmaip.github.io/GiS-Pruefung-2020/verwaltung.html";
 }
 
 async function statusFrei(this: HTMLElement): Promise<void> {
     let item: Gegenstand = items.find(gegestand => gegestand.titel === this.parentElement.children[1].innerHTML);
-    let url: string = `http://127.0.0.1:8100/statusFrei/${item._id}`;
-    console.log(url);
+    let url: string = "http://asta-gis-2021.herokuapp.com/statusFrei/" + item._id;
     await fetch(url);
-    window.location.href = "http://127.0.0.1:5500/verwaltung.html";
+    window.location.href = "http://doanmaip.github.io/GiS-Pruefung-2020/verwaltung.html";
 }
 

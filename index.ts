@@ -41,14 +41,12 @@ async function connectToDB (_url: string): Promise<void> {
 async function handleRequest (req: Http.IncomingMessage, res: Http.ServerResponse): Promise<void> {
     res.setHeader("Content-Type", "application/json");
     res.setHeader("Access-Control-Allow-Origin", "*");
-    console.log(req.method);
     if (req.method === "POST") {
         handleReservierung(req, res);
     } else if (req.method === "GET") {
         if (req.url) {
             let url: Url.UrlWithParsedQuery = Url.parse(req.url, true);
             let urlSplit: string[] = url.pathname.split("/");
-            console.log(urlSplit);
             
             if (url.pathname === "/gegenstaende") {
                 getItems(res);
@@ -76,7 +74,6 @@ async function handleReservierung (req: Http.IncomingMessage, res: Http.ServerRe
     });
     req.on("end", async () => {
         let reservierung: Reservierung = JSON.parse(body);
-        console.log(reservierung);
         await updateDbReservierungen(res, reservierung);
         res.end();
     });

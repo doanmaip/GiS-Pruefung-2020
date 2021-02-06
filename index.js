@@ -30,7 +30,6 @@ async function connectToDB(_url) {
 async function handleRequest(req, res) {
     res.setHeader("Content-Type", "application/json");
     res.setHeader("Access-Control-Allow-Origin", "*");
-    console.log(req.method);
     if (req.method === "POST") {
         handleReservierung(req, res);
     }
@@ -38,7 +37,6 @@ async function handleRequest(req, res) {
         if (req.url) {
             let url = Url.parse(req.url, true);
             let urlSplit = url.pathname.split("/");
-            console.log(urlSplit);
             if (url.pathname === "/gegenstaende") {
                 getItems(res);
             }
@@ -64,7 +62,6 @@ async function handleReservierung(req, res) {
     });
     req.on("end", async () => {
         let reservierung = JSON.parse(body);
-        console.log(reservierung);
         await updateDbReservierungen(res, reservierung);
         res.end();
     });
