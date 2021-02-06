@@ -39,23 +39,65 @@ async function connectToDB (_url: string): Promise<void> {
 }
 
 async function handleRequest (req: Http.IncomingMessage, res: Http.ServerResponse): Promise<void> {
+    res.setHeader("Content-Type", "application/json");
+    res.setHeader("Access-Control-Allow-Origin", "*");
     console.log(req.method);
-    if (req.method === "GET") {
+    if (req.method === "POST") {
+        handleReservierung(req, res);
+    } else if (req.method === "GET") {
         if (req.url) {
             let url: Url.UrlWithParsedQuery = Url.parse(req.url, true);
+            let urlSplit: string[] = url.pathname.split("/");
+            console.log(urlSplit);
             
             if (url.pathname === "/gegenstaende") {
                 getItems(res);
+            } else if (urlSplit[1] === "statusFrei") {
+                updateStatusFrei(res, urlSplit);
+            } else if (urlSplit[1] === "statusAusgeliehen") {
+                updateStatusAusgeliehen(res, urlSplit);
             }
         }
     }
 }
 
 async function getItems (res: Http.ServerResponse): Promise<void> {
-    res.setHeader("Content-Type", "application/json");
-    res.setHeader("Access-Control-Allow-Origin", "*");
     let itemsCursor: Mongo.Cursor<string> = await itemsCollection.find();
     let itemsArray: string[] = await itemsCursor.toArray();
     res.write(JSON.stringify(itemsArray));
+    res.end();
+}
+
+async function handleReservierung (req: Http.IncomingMessage, res: Http.ServerResponse): Promise<void> {
+
+    let body: string = "";
+    req.on("data", chunk => {
+        body += chunk.toString();
+    });
+    req.on("end", async () => {
+        let reservierung: Reservierung = JSON.parse(body);
+        console.log(reservierung);
+        await updateDbReservierungen(res, reservierung);
+        res.end();
+    });
+}
+
+async function updateDbReservierungen (res: Http.ServerResponse, reservierung: Reservierungen): Promise<void> {
+    for (let i: number = 0; i < reservierung.ids.length; i++) {
+        let id: Mongo.ObjectID = new Mongo.ObjectID(reservierung.ids[i].toString());
+        itemsCollection.updateOne({"_id": id}, {$set: {"status": "reserviert", "ausgeliehenAn": reservierung.name}});
+    }
+    res.end();
+}
+
+async function updateStatusFrei (res: Http.ServerResponse, urlSplit: string[]): Promise<void> {
+    let id: Mongo.ObjectId = new Mongo.ObjectId(urlSplit[2]);
+    itemsCollection.updateOne({"_id": id}, {$set: {"status": "frei", "ausgeliehenAn": ""}} );
+    res.end();
+}
+
+async function updateStatusAusgeliehen (res: Http.ServerResponse, urlSplit: string[]): Promise<void> {
+    let id: Mongo.ObjectId = new Mongo.ObjectId(urlSplit[2]);
+    itemsCollection.updateOne({"_id": id}, {$set: {"status": "ausgeliehen"}});
     res.end();
 }

@@ -1,9 +1,9 @@
 "use strict";
-let items = [];
 inizialize();
+localStorage.clear();
 async function inizialize() {
     await getItems();
-    await createItems();
+    createItems();
 }
 async function getItems() {
     let response = await fetch("http://127.0.0.1:8100/gegenstaende");
@@ -78,6 +78,7 @@ function createItems() {
             reservierung.ids.push(gegestand._id);
         }
         localStorage.setItem("reservierungen", JSON.stringify(reservierung));
+        this.disabled = true;
     }
 }
 //# sourceMappingURL=script.js.map

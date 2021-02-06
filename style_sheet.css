@@ -84,6 +84,7 @@
             align-items: center;
             background: white;
             overflow: hidden;
+            z-index: 99;
         }
         
         img[alt="AStA_logo_transp"] {

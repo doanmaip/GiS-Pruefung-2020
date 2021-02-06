@@ -1,27 +1,10 @@
-interface Gegenstand {
-    _id: number;
-    img: string;
-    kategorie: string;
-    titel: string;
-    price: number;
-    beschreibung: string; 
-    status: string;
-    ausgeliehenAn: string;
-}
-
-interface Reservierung {
-    ids: number[];
-    name?: string;
-}
-
-
-let items: Gegenstand[] = [];
 
 inizialize();
+localStorage.clear();
 
 async function inizialize (): Promise<void> {
     await getItems();
-    await createItems();
+    createItems();
 }
 
 async function getItems (): Promise<void> {
@@ -31,7 +14,7 @@ async function getItems (): Promise<void> {
 }
 
 function createItems (): void {
-    for (let i: number = 0; i < items.length; i++){
+    for (let i: number = 0; i < items.length; i++) {
         console.log(i);
         let newDiv: HTMLDivElement = document.createElement("div");
         if (items[i].kategorie === "technik") {
@@ -77,7 +60,7 @@ function createItems (): void {
         button.innerHTML = "Artikel reservieren";
 
         button.addEventListener("click", reservieren);
-        if(items[i].status === "ausgeliehen" || items[i].status === "ausgeliehen" ){
+        if (items[i].status === "ausgeliehen" || items[i].status === "ausgeliehen" ) {
             button.disabled = true;
         }
 
@@ -89,7 +72,7 @@ function createItems (): void {
         newDiv.append(button);
     }
 
-    function reservieren(this: HTMLElement, _event: Event): void {
+    function reservieren(this: HTMLButtonElement, _event: Event): void {
         let parentDiv: HTMLElement = this.parentElement;
         parentDiv.className = "ausgewaehlt";
 
@@ -111,5 +94,7 @@ function createItems (): void {
             reservierung.ids.push(gegestand._id);
         }
         localStorage.setItem("reservierungen", JSON.stringify(reservierung));
+
+        this.disabled = true;
     }
 }
