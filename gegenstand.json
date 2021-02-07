@@ -1,6 +1,6 @@
 [{
         "kategorie": "technik",
-        "img": "/img/Gegenstand/hdmi-1.jpg",
+        "img": "img/Gegenstand/hdmi-1.jpg",
         "titel": "HDMI Kabel",
         "beschreibung": "Dieses Kabel kannst du zum Anschließen deines Gerätes an einen anderen Bildschirm benutzen. Nützlich für Präsentationen.",
         "price": 4.59,
@@ -9,7 +9,7 @@
     },
     {
         "kategorie": "technik",
-        "img": "/img/Gegenstand/usb-1.jpg",
+        "img": "img/Gegenstand/usb-1.jpg",
         "titel": "UBS Stick",
         "beschreibung": "SanDisk Ultra Flair 32GB USB-Flash-Laufwerk USB 3.0 mit bis zu 150 MB/Sek, schwarz",
         "price": 3.59,
@@ -18,7 +18,7 @@
     },
     {
         "kategorie": "technik",
-        "img": "/img/Gegenstand/sd.jpeg",
+        "img": "img/Gegenstand/sd.jpeg",
         "titel": "Speicherkarte",
         "beschreibung": "SanDisk Extreme Pro SDXC UHS-I Speicherkarte 32GB (V30, U3, 4K-UHD-Videos, 170 MB/s Lesegeschwindigkeit, hitze und- kältebeständig)",
         "price": 3.59,
@@ -28,7 +28,7 @@
 
     {
         "kategorie": "technik",
-        "img": "/img/Gegenstände/kamera.jpg",
+        "img": "img/Gegenstände/kamera.jpg",
         "titel": "Kamera",
         "beschreibung": "Canon EOS M50 Systemkamera spiegellos - mit Objektiv EF-M 18-150mm IS STM",
         "price": 15.59,
@@ -38,7 +38,7 @@
 
     {
         "kategorie": "technik",
-        "img": "/img/Gegenstand/softbox.jpg",
+        "img": "img/Gegenstand/softbox.jpg",
         "titel": "Softbox",
         "beschreibung": "INTEY Softbox Dauerlicht Fotostudio Studioleuchte Set 50x70cm Fotostudio Softbox 5500K Tageslicht 135W",
         "price": 15.59,
@@ -48,7 +48,7 @@
 
     {
         "kategorie": "technik",
-        "img": "/img/Gegenstand/mikro.jpg",
+        "img": "img/Gegenstand/mikro.jpg",
         "titel": "Aufnahme Mikrofon",
         "beschreibung": "USB Mikrofon, TONOR Kondensatormikrophon. kompatibel mit Laptop Desktop, TC30",
         "price": 10.59,
@@ -77,7 +77,7 @@
 
     {
         "kategorie": "spiele",
-        "img": "/img/Gegenstand/uno.jpg",
+        "img": "img/Gegenstand/uno.jpg",
         "titel": "UNO",
         "beschreibung": "Vergessen Sie nicht, UNO zu schreien, wenn Sie nur noch eine Karte haben. Praktisches Spiel für die frühkindliche Entwicklung.",
         "price": 1.59,
@@ -95,7 +95,7 @@
     },
     {
         "kategorie": "sonstiges",
-        "img": "/img/Gegenstand/tacker.jpg",
+        "img": "img/Gegenstand/tacker.jpg",
         "titel": "Tacker",
         "beschreibung": "Leitz Heftgerät, 30 Blatt, Warmes Gelb, Cosy-Serie, 55670019",
         "price": 1.59,
