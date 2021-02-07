@@ -25,22 +25,18 @@ function createItems (): void {
 
         newDiv.className = items[i].status;
         newDiv.id = i.toString();
-        //TODO andere Kategorien hinzufügen
 
         let kategorie: HTMLParagraphElement = document.createElement("p");
         kategorie.innerHTML = items[i].kategorie;
         kategorie.className = "preheadline";
 
-        //macht image Tag und setzt source und titel dynamisch
         let image: HTMLImageElement = document.createElement("img");
         image.src = items[i].img;
         image.alt = items[i].titel;
 
-        //h2 Tag erstellt und innerHTML gesetzt
         let h2: HTMLHeadingElement = document.createElement("h2");
         h2.innerHTML = items[i].titel;
 
-        //p description Tag erstellt und innerHTML gesetzt
         let descriptionP: HTMLParagraphElement = document.createElement("p");
         descriptionP.innerHTML = items[i].beschreibung;
         descriptionP.className = "text-box";
