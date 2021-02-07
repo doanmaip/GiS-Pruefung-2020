@@ -32,15 +32,16 @@ function createVerwaltungItems(): void {
         } else if (items[i].status === "reserviert") {
             ausgeliehen.innerHTML = "Reserviert von: " + items[i].ausgeliehenAn;
         }
+        ausgeliehen.className = "p-reserviert";
         
         let ausgeliehenbtn: HTMLButtonElement = document.createElement("button");
-        ausgeliehenbtn.innerHTML = "Auf ausgeliehen setzen"; 
+        ausgeliehenbtn.innerHTML = "Auf 'ausgeliehen' setzen"; 
         ausgeliehenbtn.className = "button";
         ausgeliehenbtn.addEventListener("click", statusAusgehliehen);
 
         
         let freibtn: HTMLButtonElement = document.createElement("button");
-        freibtn.innerHTML = "Auf frei setzen"; 
+        freibtn.innerHTML = "Auf 'frei' setzen"; 
         freibtn.className = "button";
         freibtn.addEventListener("click", statusFrei);
         

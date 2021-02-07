@@ -43,9 +43,11 @@ function createItems (): void {
         //p description Tag erstellt und innerHTML gesetzt
         let descriptionP: HTMLParagraphElement = document.createElement("p");
         descriptionP.innerHTML = items[i].beschreibung;
+        descriptionP.className = "text-box";
 
         let ausleigebuehrP: HTMLParagraphElement = document.createElement("p");
-        ausleigebuehrP.innerHTML = "Ausleihgebühr: € ";
+        ausleigebuehrP.innerHTML = "Ausleihgebühr: ";
+        ausleigebuehrP.className = "preis";
 
         let strong: HTMLElement = document.createElement("strong");
         strong.innerHTML = items[i].price.toString();

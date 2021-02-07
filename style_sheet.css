@@ -3,11 +3,16 @@
     scroll-behavior: smooth;
 }
 
+head {
+    margin: 0px;
+}
+
 body {
     font-size: 15px;
     font-family: "Poppins", sans-serif;
     letter-spacing: 0.5px;
     color: #696969;
+    margin: auto;
 }
 
 h1 {
@@ -44,6 +49,7 @@ a:hover {
     color: white;
     margin-top: 20px;
     margin-bottom: 10px;
+    font-family: Poppins;
 }
 
 .btn:hover {
@@ -63,7 +69,7 @@ a:hover {
     top: 0;
 }
 
-.usp-grid {
+.usp-banner>div {
     display: flex;
     padding: 15px;
     color: white;
@@ -114,6 +120,11 @@ nav a {
 
 .nav_icons {
     margin-right: 50px;
+}
+
+.nav>li {
+    list-style-type: none;
+    display: inline;
 }
 
 .dropdown {
@@ -233,6 +244,7 @@ img[alt="hero"] {
     text-align: left;
     margin: auto;
     margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .flexProducts div img {
@@ -246,7 +258,16 @@ img[alt="hero"] {
     padding: 20px;
     text-align: left;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.text-box {
+    height: 120px;
+}
+
+.p-reserviert {
+    height: 25px;
 }
 
 .button {
@@ -298,6 +319,11 @@ input[type=text] {
 
 input[type=submit] {
     font-family: Poppins;
+}
+
+.preis::after,
+#preis::after {
+    content: " €";
 }
 
 
@@ -362,18 +388,29 @@ footer p {
         display: none;
     }
     img[alt="AStA_logo_transp"],
-    .dropdown,
-    .dropdown-content,
+    img[alt="hero"],
     .dropdown:hover .dropdown-content {
         display: none;
     }
+    .nav>li {
+        display: block;
+    }
+    .footer-banner {
+        grid-template-columns: auto;
+    }
+    img[alt="logo-hfu"] {
+        margin-bottom: 30px;
+    }
 }
 
-@media (max-width: 80px) {
-    .dropdown,
-    .dropdown-content,
+@media (max-width: 800px) {
+    img[alt="AStA_logo_transp"],
+    img[alt="hero"],
     .dropdown:hover .dropdown-content {
         display: none;
+    }
+    .nav>li {
+        display: block;
     }
 }
 
