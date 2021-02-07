@@ -125,7 +125,7 @@ nav a {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 210px;
+    min-width: 220px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     padding: 15px;
@@ -143,10 +143,6 @@ nav a {
     overflow: hidden;
     position: sticky;
     top: 0;
-}
-
-hr {
-    border-top: 0.5px lightgray solid;
 }
 
 .header-2 {
@@ -365,13 +361,20 @@ footer p {
     .usp-banner {
         display: none;
     }
-    img[alt="AStA_logo_transp"] {
+    img[alt="AStA_logo_transp"],
+    .dropdown,
+    .dropdown-content,
+    .dropdown:hover .dropdown-content {
         display: none;
     }
 }
 
 @media (max-width: 80px) {
-    img[alt="AStA_logo_transp"] {}
+    .dropdown,
+    .dropdown-content,
+    .dropdown:hover .dropdown-content {
+        display: none;
+    }
 }
 
 
