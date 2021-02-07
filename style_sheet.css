@@ -215,7 +215,8 @@
             margin: auto;
         }
         
-        .flexProducts {
+        .flexProducts,
+        .flexProducts2 {
             display: flex;
             flex-wrap: wrap;
         }
@@ -234,7 +235,16 @@
             height: 360px;
         }
         
-        .flexProducts .button {
+        .flexProducts2 div {
+            width: 500px;
+            height: 250px;
+            padding: 20px;
+            text-align: left;
+            margin: auto;
+            margin-top: 50px;
+        }
+        
+        .button {
             background-color: #033f55;
             color: white;
             padding: 10px;
@@ -243,7 +253,8 @@
             width: 100%;
             border-radius: 5px;
             border: none;
-            margin-bottom: 5px
+            margin-bottom: 5px;
+            font-family: Poppins;
         }
         
         .button:hover {
@@ -257,7 +268,7 @@
         }
         
         .ausgewaehlt {
-            border: rgba(0, 0, 0, 0.5) solid 5px;
+            box-shadow: 0 9.3px 9.6px rgba(0, 0, 0, 0.037), 0 46px 77px rgba(0, 0, 0, 0.07);
             cursor: not-allowed;
         }
         

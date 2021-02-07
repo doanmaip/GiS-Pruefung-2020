@@ -79,7 +79,7 @@ async function handleReservierung (req: Http.IncomingMessage, res: Http.ServerRe
     });
 }
 
-async function updateDbReservierungen (res: Http.ServerResponse, reservierung: Reservierungen): Promise<void> {
+async function updateDbReservierungen (res: Http.ServerResponse, reservierung: Reservierung): Promise<void> {
     for (let i: number = 0; i < reservierung.ids.length; i++) {
         let id: Mongo.ObjectID = new Mongo.ObjectID(reservierung.ids[i].toString());
         itemsCollection.updateOne({"_id": id}, {$set: {"status": "reserviert", "ausgeliehenAn": reservierung.name}});
